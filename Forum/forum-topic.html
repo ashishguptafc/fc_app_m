@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forum - Topic</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../MyFontsWebfontsKit.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/app.js"></script>
+        <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+        <div class="container-fluid" id="forum-topic">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1>Forum</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h4>Consectetur adipiscing elit, sed do</h4>
+                        </div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-xs-12">
+                            <div class="bg-heading">
+                                <span>{{question.f_name+ " " + question.l_name}} </span>
+                                <span>{{question.created_at * 1000 | date : 'EEE,dd MMM,yyyy'}}</span>
+                                <span>{{question.created_at * 1000 | date : 'h:mma'}}</span>
+                            </div>
+                             <h4>{{question.title}}</h4>
+                            <p>{{question.content}}.</p>
+                            <div class="btn-wrapper">
+                                <button type="submit" class="btn btn-default btn-golden pull-right">Reply to Topic</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-xs-12" dir-paginate="data in questionComment | orderBy :'-id'| itemsPerPage : 10">
+                            <div class="no-bg-heading">
+                               <span>{{data.f_name+" "+data.l_name +" "+data.id}} </span>
+                                <span>{{data.created_at * 1000 | date : 'EEE,dd MMM,yyyy'}}</span>
+                                <span>{{data.created_at * 1000 | date : 'h:mma'}}</span>
+                            </div>
+                            <p>{{data.comment}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="btn-wrapper">
+                                <button type="submit" class="btn btn-default btn-golden pull-right">Reply to Topic</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="pull-right">
+                                <nav>
+                                     <div ng-controller="OtherController" class="text-center">
+                                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="Pagination/dirPagination.html"></dir-pagination-controls>
+                            </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row comment-box">
+                        <div class="col-xs-12">
+                            <form name="topicComment" role="form" ng-submit="submitTopicComment()" novalidate>
+                                <div class="form-group" ng-class="{ 'has-error' : topicComment.topicTextComment.$invalid && !topicComment.topicTextComment.$pristine }">
+                                    <label for="comment">Comment:</label>
+                                    <textarea name="topicTextComment" required ng-model="topic.comment" class="form-control" rows="5" id="comment"></textarea>
+                                    <p ng-show="topicComment.topicTextComment.$invalid && !topicComment.topicTextComment.$pristine" class="help-block">Comment is required.</p>
+                                </div>
+                                <button ng-disabled="topicComment.$invalid"  class="btn btn-default btn-golden pull-right">Submit</button>
+                            </form>
+                            <p class="alert alert-success" ng-show="msg.status">{{msg.message}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

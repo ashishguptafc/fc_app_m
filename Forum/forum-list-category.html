@@ -1,0 +1,90 @@
+
+<div class="container-fluid" id="forum-list-category">
+    <div class="row">
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                    <h1>Forum</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h4>Categories</h4>
+                        </div>
+                    </div>
+                    <div class="forum-cat-list">
+                        <div class="each-cat-view">
+                            <table ng-repeat="data in result" class="table table-responsive">
+                                <thead>
+                                <th>{{data[0].cat_name}}</th>
+                                <th>Topics</th>
+                                </thead>
+                                <tbody>
+                                    <tr ui-sref="view_forum_topic({subcategoryId : subcategory.sub_cat_id})" ng-repeat="subcategory in data[1]">
+                                        <td><a >{{subcategory.sub_cat_name}}</a></td>
+                                        <td>
+                                            <a href=""> {{subcategory.topic_count}} </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1  hidden-xs hidden-md"> </div>
+                <!--  <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+                      <div class="recent-topic sidebar-box">
+                          <h4 class="sidebar-box-title">Recent Topic</h4>
+                          <div class="overflow-scroll">
+                              <div class="recent-topic-list sidebar-box-elements">
+                                  <div>
+                                      <p>
+                                          sed do eiusmod tempor incididunt
+                                          ut labore et dolore magna aliqua?
+                                      </p>
+                                      <span>
+                                          Posted by: Shardul Patil
+                                      </span>
+                                  </div>
+                              </div>
+                              <div class="recent-topic-list sidebar-box-elements">
+                                  <div>
+                                      <p>
+                                          sed do eiusmod tempor incididunt
+                                          ut labore et dolore magna aliqua?
+                                      </p>
+                                      <span>
+                                          Posted by: Shardul Patil
+                                      </span>
+                                  </div>
+                              </div>
+                              <div class="recent-topic-list sidebar-box-elements">
+                                  <div>
+                                      <p>
+                                          sed do eiusmod tempor incididunt
+                                          ut labore et dolore magna aliqua?
+                                      </p>
+                                      <span>
+                                          Posted by: Shardul Patil
+                                      </span>
+                                  </div>
+                              </div>
+                              <div class="recent-topic-list sidebar-box-elements">
+                                  <div>
+                                      <p>
+                                          sed do eiusmod tempor incididunt
+                                          ut labore et dolore magna aliqua?
+                                      </p>
+                                      <span>
+                                          Posted by: Shardul Patil
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div> -->
+            </div>
+        </div>
+    </div>
+</div>

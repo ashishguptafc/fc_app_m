@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile - Update Profile</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../MyFontsWebfontsKit.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/app.js"></script>
+        <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+        <div class="container-fluid" id="update-profile">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 collapsed-height border-top border-bottom">
+                            <h1 class="float-left">update your profile</h1>
+                        </div>
+                    </div>
+                    <div class="row create-profile-wrapper">
+                        <div class='col-xs-12 col-sm-12 col-md-8 col-lg-6'>
+                            <form  method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label>upload your photo</label>
+                                            <label for="upload-profile-photo">
+                                                <img src="../images/dp-placeholder.png" />
+                                            </label>
+                                            <input type="file" class="form-control" id="upload-profile-photo">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label>upload odometer photo</label>
+                                             <label for="upload-odometer-photo">
+                                                 <img src="../images/odometer-placeholder.png" />
+                                            </label>
+                                            <input type="file" class="form-control" id="upload-odometer-photo">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row border-bottom"> <!-- Personal Info -->
+                                    <h4>Personal Information</h4>
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="first-name">First Name</label>
+                                                    <input type="text" class="form-control" id="first-name">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+
+                                                <div class="form-group">
+                                                    <label for="last-name">Last Name</label>
+                                                    <input type="text" class="form-control" id="last-name" >
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <p class="label-custom">Gender</p>
+                                                    <label class="radio-inline"><input type="radio" name="optradio">Male</label>
+                                                    <label class="radio-inline"><input type="radio" name="optradio">Female</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="start-date">Date of Birth</label>
+                                                    <div class='input-group date' id='datetimepicker1'>
+                                                        <input type='text' class="form-control" id="start-date" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <label for="mobile-number">Mobile Number</label>
+                                                    <input type="text" class="form-control" id="mobile-number" >
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="select-state">Select your State</label>
+                                                    <select class="form-control" id="select-state">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="select-city">Select your City</label>
+                                                    <select class="form-control" id="select-city">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="address">Address</label>
+                                                    <textarea class="form-control" rows="5" id="address"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="pin-code">Pin Code</label>
+                                                    <input type="text" class="form-control" id="pin-code" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row border-bottom">  <!-- Additional Info -->
+                                    <h4>Additional Information</h4>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="kilometer-covered">Kilometers covered</label>
+                                                <input type="text" class="form-control" id="kilometer-covered">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="tribe-name">My mojo tribe name</label>
+                                                <input type="text" class="form-control" id="tribe-name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="about-user">About Me</label>
+                                                <textarea class="form-control" rows="5" id="about-user"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label for="riding-exp">Riding Experience</label>
+                                                <textarea class="form-control" rows="5" id="riding-exp"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">   <!-- Social Media Links -->
+                                    <h4>Social Media Links</h4>
+                                    <div class="col-xs-12 col-sm-12">
+                                        <div class="row">
+                                            <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                                <label for="user-facebook">Facebook</label>
+                                                <input type="text" class="form-control" id="user-facebook">
+                                            </div>
+                                            <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                                <label for="user-instagram">Instagram</label>
+                                                <input type="text" class="form-control" id="user-instagram">
+                                            </div>
+                                            <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                                <label for="user-twitter">Twitter</label>
+                                                <input type="text" class="form-control" id="user-twitter">
+                                            </div>
+                                            <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                                <label for="user-blog">Blog</label>
+                                                <input type="text" class="form-control" id="user-blog">
+                                            </div>
+                                            <button type="submit" class="btn btn-default btn-golden pull-right">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

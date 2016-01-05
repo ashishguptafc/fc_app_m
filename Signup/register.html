@@ -1,0 +1,76 @@
+
+<div class="container-fluid" id="mojo-owner-login">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                        <h1>REGISTER</h1>
+                        <img src="images/fb-login.png">
+                    </div>
+                    <div class="hidden-xs col-sm-1 col-md-1 col-lg-1">
+                        <img src="images/or-divider.png">
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <h1>SIGN UP WITH EMAIL</h1>
+                        <div class="row">
+                            <form role="form" name="registerForm" ng-submit="registerSubmit()" novalidate>
+                                <div class="col-md-12">
+                                    <fieldset class="form-group" ng-class="{ 'has-error' : registerForm.f_name.$invalid && !registerForm.f_name.$pristine }">
+                                        <label for="f_name">First Name</label>
+                                        <input type="text" class="form-control" id="f_name" name="f_name" ng-model="register.f_name" required>
+                                        <p ng-show="registerForm.f_name.$invalid && !registerForm.f_name.$pristine" class="help-block">First Name is required.</p>
+                                        <p ng-if="error.f_name" class="help-block">First name field can not be empty</p>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset class="form-group" ng-class="{ 'has-error' : registerForm.l_name.$invalid && !registerForm.l_name.$pristine }">
+                                        <label for="l_name">Last Name</label>
+                                        <input type="text" class="form-control" id="l_name" name="l_name" ng-model="register.l_name" required>
+                                        <p ng-show="registerForm.l_name.$invalid && !registerForm.l_name.$pristine" class="help-block">Last Name is required.</p>
+                                        <p ng-if="error.l_name" class="help-block">Last name field can not be empty</p>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset class="form-group" ng-class="{ 'has-error' : registerForm.email_id.$invalid && !registerForm.email_id.$pristine }">
+                                        <label for="email_id">Email ID</label>
+                                        <input type="email" class="form-control" id="email_id" name="email_id" ng-model="register.email" required>
+                                        <p ng-show="registerForm.email_id.$invalid && !registerForm.email_id.$pristine" class="help-block">Email Id is required.</p>
+                                        <p ng-if="error.email" class="help-block">Email Id Already Exists.</p>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset class="form-group" ng-class="{ 'has-error' : registerForm.password.$invalid && !registerForm.password.$pristine }">
+                                        <label for="Password">Password</label>
+                                        <input type="password" class="form-control" id="Password" name="password" ng-model="register.password" required>
+                                        <p ng-show="registerForm.password.$invalid && !registerForm.password.$pristine" class="help-block">Password is required.</p>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset class="form-group" ng-class="{ 'has-error' : registerForm.c_password.$invalid && !registerForm.c_password.$pristine }">
+                                        <label for="c_password">Confirm Password</label>
+                                        <input type="password" class="form-control" id="c_password" name="c_password" ng-model="register.c_password" required>
+                                        <p ng-show="registerForm.c_password.$invalid && !registerForm.c_password.$pristine" class="help-block">Confirm Password is required.</p>
+                                        <p ng-if="error.c_password" class="help-block">Password and Confirm password field shoulld consist same value</p>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <button ng-disabled="registerForm.$invalid" type="submit" class="btn btn-default btn-golden pull-right">REGISTER</button>
+                                    <p>* Mandatory Fields</p>
+                                </div> 
+                            </form>
+                            <p ng-show="$scope.error">Error Please fill appropriate data.</p>
+
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <hr>
+                    <p class="text-color-golden">Already Register? <a ui-sref="login" href="#" class="text-color-golden underline">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

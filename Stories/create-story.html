@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stories - Create Story</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../MyFontsWebfontsKit.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/app.js"></script>
+        <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+        <div class="container-fluid" id="create-story">
+            <div class="row">
+                <div class="container body-content">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-9 col-md-9">
+                            <h1>
+                                Create trail story
+                            </h1>
+                            <hr>
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-3 ">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+                            <div class="row">
+                                <form>
+                                    <div class="form-group col-xs-12">
+                                        <label for="story-title">Story Title</label>
+                                        <input type="text" class="form-control" id="story-title">
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-6">
+                                        <label for="start-date">Start Date</label>
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' class="form-control" id="start-date" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-6">
+                                        <label for="end-date">End Date</label>
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' class="form-control" id="end-date"/>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6">
+                                        <label for="start-location">Start Location</label>
+                                        <input type="text" class="form-control" id="start-location">
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6">
+                                        <label for="end-location">End Location</label>
+                                        <input type="text" class="form-control" id="end-location">
+                                    </div>
+
+                                    <div class="form-group col-xs-12">
+                                        <label for="story">Story</label>
+                                        <textarea class="form-control" rows="5" id="story"></textarea>
+                                    </div>
+                                    <div class="form-group col-xs-12">
+                                        <label for="tags">Tags</label>
+                                        <input type="text" class="form-control" id="tags">
+                                    </div>
+                                    <div class="form-group col-xs-12">
+                                        <!-- Add Drop Files js  - http://www.dropzonejs.com/ -->
+                                        
+                                        <p> Drop Files To Upload Make here</p>
+                                    </div>
+
+                                    <div class="form-group col-xs-12">
+                                        <label for="video-link">Video Link</label>
+                                        <input type="text" class="form-control" id="video-link">
+                                    </div>
+                                    <button type="submit" class="btn btn-default btn-golden pull-right">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,63 @@
+
+        <div class="container-fluid" id="enter-trail-route-info" ng-app="ngMap">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Shout Out for a Trail</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                                
+                             <ng-map zoom="5" center="21.7679, 78.8718" style="height:90%" on-click="logLatLng()" >
+        <directions 
+          draggable="true"
+          panel="directions-panel"
+          travel-mode="{{travelMode}}"
+          waypoints="{{wayPoints}}"
+          origin="{{origin}}"
+          destination="{{destination}}">
+        </directions>
+      </ng-map> 
+<!--             Directions path length:
+        {{map.directionsRenderers[0].directions.routes[0].overview_path.length}}-->
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                <div class="row">
+                                    <form name="createTrailRoute" role="form" ng-submit="submitTrailRoute()" novalidate>
+                                        <div class="col-xs-12">
+                                            <fieldset class="form-group" ng-class="{ 'has-error' : createTrailRoute.origin.$invalid && !createTrailRoute.origin.$pristine }">
+                                                <label for="origin">Origin</label>
+                                                <input type="text" class="form-control" id="origin" name="origin" ng-model="origin">
+                                                <p ng-show="createTrailRoute.origin.$invalid && !createTrailRoute.origin.$pristine" class="help-block">Origin is required.</p>
+                                            </fieldset>
+                                        </div> 
+                                        <div class="col-xs-12">
+                                            <fieldset class="form-group" ng-class="{ 'has-error' : createTrailRoute.going_via.$invalid && !createTrailRoute.going_via.$pristine }">
+                                            <label for="going_via">Going Via</label>
+                                            <input type="text" class="form-control" id="via" name="going_via" ng-model="via.location">
+                                            <p ng-show="createTrailRoute.going_via.$invalid && !createTrailRoute.going_via.$pristine" class="help-block">Going Via is required.</p>
+                                            <!--<div id="directions-panel" style="width: 100%; height: 300px; overflow-y: scroll; padding: 0px 5px;background:#fff">-->
+                                            </fieldset>
+                                        </div> 
+                                        <div class="col-xs-12">
+                                            <fieldset class="form-group" ng-class="{ 'has-error' : createTrailRoute.destination.$invalid && !createTrailRoute.destination.$pristine }">
+                                                <label for="destination">Destination</label>
+                                                <input type="text" class="form-control" id="destination" name="destination" ng-model="destination">
+                                                <p ng-show="createTrailRoute.destination.$invalid && !createTrailRoute.destination.$pristine" class="help-block">Destination is required.</p>
+                                            </fieldset>
+                                        </div> 
+                                        <div class="col-xs-12">
+                                            <button type="submit" ng-disabled="createTrailRoute.$invalid" class="btn btn-default btn-golden pull-right">Submit</button>
+                                        </div> 
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

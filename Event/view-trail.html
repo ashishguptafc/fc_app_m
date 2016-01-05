@@ -1,0 +1,72 @@
+
+        <div class="container-fluid" id="view-trail">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Shout Out for a Trail</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <form role="form">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-default btn-golden">Join Trail</button>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <!--<img src="../images/map.png" class="img-responsive">-->
+                                 <ng-map zoom="5" center="21.7679, 78.8718" style="height:90%" on-click="logLatLng()" >
+        <directions 
+          draggable="true"
+          panel="directions-panel"
+          travel-mode="{{travelMode}}"
+          waypoints="{{wayPoints}}"
+          origin="{{event_data.origin}}"
+          destination="{{event_data.destination}}">
+        </directions>
+      </ng-map> 
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-5 col-lg-5">
+                                <h4>Trail Title</h4>
+                                <p>{{event_data.event_title}}</p>
+                                <hr>
+                                <h4>Details</h4>
+                                <p><b class="text-color-golden">Start Date :</b> {{event_data.start_date | date : 'dd MMM,yyyy'}}</p>
+                                <p><b class="text-color-golden">End Date :</b> {{event_data.end_date | date : 'dd MMM,yyyy'}}</p>
+                                <p><b class="text-color-golden">Start Time :</b> {{event_data.event_time | date : 'h:mma'}}</p>
+                                <p><b class="text-color-golden">Origin :</b> {{event_data.origin}}</p>
+                                <p><b class="text-color-golden">Destination :</b> {{event_data.destination}}</p>
+                                <p><b class="text-color-golden">No of days:</b> {{event_data.end_date - event_data.start_date | date : 'dd'}}</p>
+                                <p><b class="text-color-golden">Total Distance:</b> 198</p>
+                                <p><b class="text-color-golden">Road Type:</b> {{event_data.road_type}}</p>
+                                <hr>
+                                <h4>Details</h4>
+                                <p><b class="text-color-golden">Created By :</b> {{event_data.f_name +" "+ event_data.l_name}}</p>
+                                <p><b class="text-color-golden">Email Id :</b> {{event_data.email}}</p>
+                                <p><b class="text-color-golden">Mobile :</b> {{event_data.mobile}}</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                             
+                                <div class="panel panel-default" ng-if="join_total">
+                                    <div class="panel-heading" >Riders Joined ({{join_total}})</div>
+                                    <ul class="list-group" ng-repeat="joined in event_join_data">
+                                        <li class="list-group-item">{{joined.f_name +" "+ joined.l_name}}</li>
+<!--                                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                                        <li class="list-group-item">Morbi leo risus</li>
+                                        <li class="list-group-item">Porta ac consectetur ac</li>
+                                        <li class="list-group-item">Vestibulum at eros</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>

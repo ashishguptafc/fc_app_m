@@ -1,0 +1,630 @@
+/* 
+    Created on : Dec 16, 2015, 8:20:04 PM
+    Author     : Ajay Maurya
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700,800);
+@import url("//hello.myfonts.net/count/2f4319");
+
+@font-face {
+    font-family: 'MicrobrewUnicaseOne';
+    font-weight: 400;
+    src: url('webfonts/2F4319_20_0.eot');
+    src: url('webfonts/2F4319_20_0.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/2F4319_20_0.woff2') format('woff2'),
+        url('webfonts/2F4319_20_0.woff') format('woff'),
+        url('webfonts/2F4319_20_0.ttf') format('truetype');
+}
+
+/* Commom style Starts Here */
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #222;
+}
+
+body, p, h2, h3, h4, h5, h6 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #d8b863;
+}
+
+body, p {
+    font-size: 14px;
+    color: #fff;
+}
+
+h1 {
+    font-family: 'MicrobrewUnicaseOne';
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h4{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+ul,li{
+    color:#000
+}
+
+h4{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+h3{
+    font-size: 18px;
+}
+*{
+    outline: none;
+}
+
+hr{
+    margin: 15px 0;
+    border-top: 1px solid #cccccc;
+}
+
+.collapsed-height{
+    overflow: hidden;
+}
+/* Commom style ends Here */
+
+/*a tag start */
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.black,
+a.black:hover,
+a.black:visited,
+a.black:active,
+a.black:focus {
+    color: #000;
+}
+/*a tag end */
+
+/* text color start */
+.text-color-golden{
+    color:#d8b863;   
+}
+
+.text-color-white {
+    color: #fff;
+}
+
+.text-color-black {
+    color: #000;
+}
+/* text color end */
+
+.underline{
+    text-decoration: underline;
+}
+.center-heading {
+    text-align: center;
+}
+.content-right{
+    text-align:right;
+}
+.below-slider{
+   margin: 30px 0px 15px;
+}
+/*button define*/
+.btn-golden,
+.btn-golden:hover,
+.btn-golden:focus,
+.btn-golden:active {
+    background: #d8b863;
+    color: #000;
+    border: 1px solid #d8b863;
+    outline: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 6px 20px;
+    margin-bottom: 15px;
+}
+/*button end */
+
+/*form elements start*/
+form label, 
+label, 
+.label-custom{
+    color: #d8b863;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+}
+.form-control{
+   background: #222222;
+   color: #fff;
+   border: 1px solid #4e4e4e;
+   -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.input-group-addon {
+    color: #fff;
+    border: 1px solid #4e4e4e;
+    background: none;
+}
+
+/*form elements ends*/
+
+
+/*Custom elements*/
+
+.bootstrap-datetimepicker-widget{
+    color:#000;
+}
+.border-top{
+    padding: 15px 0;
+    border-top:1px solid #cccccc;
+}
+
+.border-bottom{
+    padding: 15px 0;
+    border-bottom:1px solid #cccccc;
+}
+
+.btn-wrapper{
+    overflow: hidden;
+}
+
+.big-heading{
+    font-size: 48px;
+}
+.small-heading{
+   font-size: 21px; 
+}
+span.smalltext{
+    font-size: 12px;
+}
+hr{
+    border-top: 1px solid #4e4e4e;
+}
+.collapsed-height{
+    overflow: hidden;
+}
+.pagination {
+    margin:10px 0px;
+}
+.search-text{
+   margin-top: 10px;
+}
+.heading-all{
+    margin-top: 0px;
+}
+
+.divider-reg >img {
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    margin-top: -103px;
+}
+.divider-login >img {
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    margin-top: -103px;
+}
+.divider-search >img {
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    margin-top: -100px;
+}
+/*.center-heading{
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    margin-top: -85px;
+}*/
+/* Table Style starts here */
+table thead{
+    background:  #000;
+    font-weight: normal;
+    color: #d8b863;
+    border: 1px solid #000;
+}
+.table > thead > tr > th{
+    border: 1px solid #000;
+    font-weight: normal;
+    font-size: 16px;
+}
+tbody td{
+    font-weight: normal;
+    font-size: 14px;
+}
+
+/* Table Style Ends  here */
+.search-custom{
+    border-bottom: 1px solid #ccc;
+    border-top: 0 none;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;   
+}
+
+
+/* Search Box Starts Here */
+
+/* Search Box Ends  Here */
+.sidebar-box{
+    background: #fff;
+    color:#000;
+    border:1px solid #000;
+}
+.sidebar-box .overflow-scroll{
+    max-height: 320px;
+    overflow:  auto;
+}
+.sidebar-box p{
+    color: #000;
+    margin: 0;
+}
+.sidebar-box .sidebar-box-elements{
+    padding: 10px;
+}
+.sidebar-box .sidebar-box-elements > div{
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px;
+}
+.sidebar-box-title{
+    min-height: 50px;
+    padding: 15px;
+    background: #cccccc;
+    color: #000;
+}
+.sidebar-box h4{
+    margin: 0;
+    border-bottom: 1px solid #7f7f7f;
+}
+/* sidebar block starts here */
+
+/* sidebar block ends here */
+
+/*Custom elements*/
+.body-content{
+    padding-top: 20px;
+}
+
+.bg-heading{
+    background:  #cccccc;
+    font-weight: normal;
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.no-bg-heading{
+    margin: 5px 0;
+}
+
+.bg-heading span, .no-bg-heading span{
+    padding: 15px;
+}
+.no-bg-heading span:first-child{
+    padding-left: 5px;
+}
+
+.comment-box form{
+    max-width: 500px;
+}
+
+/* Commom style Ends Here */
+
+/* Search */
+ .add-on .input-group-btn > .btn {
+  //border-left-width:0;
+  //left:-2px;
+  //-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  //box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  background: none;
+  border-bottom: 1px solid #ccc;
+  border-radius:0;
+}
+/* stop the glowing blue shadow */
+.add-on .form-control:focus {
+    box-shadow:none;
+    -webkit-box-shadow:none; 
+    border-color:#cccccc; 
+}
+/* Search End */
+
+/* Member Starts Here */
+
+.congrats_bg{
+    background:transparent url('images/congrats_bg.jpg') no-repeat scroll center right;
+    background-size: cover;
+    height: 667px;
+    position: relative;
+}
+.member-content{
+    margin:12px 0px;
+}
+.member-content p:nth-child(1){
+    margin-bottom: 0px;
+}
+/* Member Ends Here */
+
+/* Event Starts here */
+
+.user-event{
+    background:#fff;
+    padding:30px 15px;
+}
+.user-event > p{
+    color:#000;
+}
+.mojo-event{
+    background:#d8b863;
+    padding:30px 15px;
+}
+.mojo-event > p{
+    color:#000;
+}
+.event-posted{
+   background:#000; 
+   padding:15px;
+}
+.event-posted > p {
+   color:#fff; 
+}
+ .event_land_bg{
+    background:transparent url('images/event_land_bg.jpg') no-repeat scroll center right;
+    background-size: cover;
+    height: 667px;
+    position: relative;
+}
+.golden-box{
+   background: #d8b863;
+   padding: 1px 20px;
+   margin-right:10px;
+}
+.white-box{
+   background: #fff;
+   padding: 1px 20px;
+   margin-right:10px;
+}
+
+/* Events End Here */
+
+/* Ajay Code 25th DEC 2015*/
+.bg-heading{
+    background:  #000;
+    font-weight: normal;
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 5px;
+    color: #d8b863
+}
+.img-middle > img{
+    display: block;
+    margin: 0 auto;
+}
+.inline-block{
+    display: inline-block;
+}
+.btn-grey,
+.btn-grey:hover,
+.btn-grey:focus,
+.btn-grey:active {
+    background: #cccccc;
+    color: #000;
+    border: 1px solid #000;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 10px;
+    margin-bottom: 15px;
+}
+h4 a, h2 a{
+    color: #d8b863 !important;
+}
+/* Forum Create Topic Starts Here */
+#forum-list-questions .subcat-name{
+    display: inline-block;
+}
+
+#forum-list-questions .post-new-topic{
+    display: inline-block;
+    float:right;
+}
+/* Forum Create Topic Ends Here */
+
+/* Forum List Category starts here */
+.forum-cat-list h4{
+    margin: 20px 0;
+}
+/* Forum List Category ends here */
+
+/* Forum Search Page starts here */
+.forum-search-result p span:nth-child(1){
+    padding:0 10px 0 0;
+}
+
+/* Forum Search Page Ends Here */
+
+/* Forum  Ends Here */
+
+
+
+/* Stories Part Starts Here */
+
+/* All trail stories page starts here */
+#all-trail-stories h4{
+    text-transform: none;
+}
+.stories-bio-info h4{
+    margin-bottom: 0;
+}
+.list-stories h4 a{
+    color: #d8b863;
+}
+.stories-bio-info p{
+    margin: 10px 0;
+}
+#all-trail-stories .featured-stories
+{
+    margin-top: 45px;
+}
+.author-profile .inline-block{
+    vertical-align: bottom;
+    padding: 15px 15px 15px 0;
+}
+
+.author-profile .inline-block p{
+    margin: 0;
+}
+
+.author-profile .inline-block h4{
+    margin:5px  0;
+}
+
+.story-video .inline-block{
+    vertical-align: top;
+    padding: 15px 15px 15px 0;
+}
+
+.story-tags p span{
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+/* All trail stories page ends here */
+
+/* Single Story page starts here */
+.stories-comments p span{
+    display: block;
+}
+.stories-comments p span:nth-child(1){
+    font-size: 14px;
+    font-weight: 700;
+    color: #d8b863;
+}
+#my-story h4{
+    text-transform: none;
+}
+/* Single Story Page Ends Here */
+
+/* User Profile Stories Page starts here */
+
+.user-name{
+    text-align: center;
+}
+
+
+.user-name h2{
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.user-name h4{
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 14px;
+
+}
+.user-stories-wrapper{
+    margin-top: 25px;
+}
+/* User Profile Stories Page ends here */
+/* Stories Search Page  start here*/
+.stories-search-result p span:nth-child(2){
+    padding-left: 15px;
+}
+/* Stories Search Page Ends Here */
+/* Stories Part Ends Here */
+
+
+/* User Profile Starts Here */
+.user-profile-wrapper{
+    margin-top: 15px;
+}
+.user-tribe-info{
+    background: #100f0b;
+    max-height: 75px;
+    padding: 5px 0;
+}
+.user-tribe-info ul li h2{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+.follow-user{
+    margin-top: 15px;
+    text-align: center;
+}
+.user-odometer-photo{
+    margin-top: 15px;
+}
+.follow-user p span:after{
+    content: " | ";
+    padding: 0 5px;
+}
+.follow-user p span i{
+    color: #7f7f7f;
+}
+.user-upcoming-trails-list ul li p a{
+    font-size: 18px;
+    color: #7f7f7f;
+    font-weight: 700;
+}
+.user-upcoming-trails-list ul li span{
+    font-size: 14px;
+    color: #7f7f7f;
+}
+.user-upcoming-trails-list ul li{
+    padding: 7.5px 0;
+}
+.user-info-display{
+    padding: 0 15px;
+}
+#update-profile form input[type="file"] {
+    display: none;
+}
+.create-profile-wrapper{
+    margin-top: 25px;
+}
+/* User Profile Ends Here */
+
+
+/* Media Queries */
+@media all and (max-width:768px){
+    .user-stories-mobile{
+        text-align: center;
+    }
+    .user-stories-mobile img{
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+/* Carousel Starts */
+.owl-theme .owl-controls .owl-buttons div {
+  position: absolute;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-prev {
+  left: -45px;
+  top: 0px;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-next {
+  right: -45px;
+  top: 0px;
+}
+/*Carousel ends*/

@@ -1,0 +1,37 @@
+        <div class="container-fluid" id="forum-create-topic">
+            <div class="row">
+                <div class="container body-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1>Create a topic</h1>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                             <form name="createTopic" role="form" ng-submit="submitComment()" novalidate>
+                        <div class="form-group" ng-class="{ 'has-error' : createTopic.topicSelect.$invalid && !createTopic.topicSelect.$pristine }">
+                            <label for="select-topic">Select topic:</label>
+                            <select class="form-control"  name="topicSelect" ng-options="item as item.name for item in items track by item.id" ng-model="forumComment.selected" required></select>
+                            <p ng-show="createTopic.topicSelect.$invalid && !createTopic.topicSelect.$pristine" class="help-block">Topic is required.</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : createTopic.title.$invalid && !createTopic.title.$pristine }">
+                            <label for="topic-title">Title</label>
+                            <input name="title" type="text" class="form-control" id="topic-title" required ng-model="forumComment.title">
+                            <p ng-show="createTopic.title.$invalid && !createTopic.title.$pristine" class="help-block">Title is required.</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : createTopic.message.$invalid && !createTopic.message.$pristine }">
+                            <label for="message">Message</label>
+                            <textarea name="message" class="form-control" rows="5" id="message" required ng-model="forumComment.comment"></textarea>
+                            <input type="hidden"  ng-value="forumComment.unique_id" >
+                            <p ng-show="createTopic.message.$invalid && !createTopic.message.$pristine" class="help-block">Message is required.</p>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6LchdBMTAAAAAJK-CiTPjtHKb81ztlQnQoBwBU1E"></div>
+                        <button  ng-disabled="createTopic.$invalid" class="btn btn-default btn-golden pull-right">Submit</button>
+                    </form>
+                    <p class="alert alert-success" ng-show="msg.status">{{msg.message}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

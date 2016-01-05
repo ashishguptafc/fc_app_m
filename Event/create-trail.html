@@ -1,0 +1,137 @@
+<!--<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mojo Tribe</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../MyFontsWebfontsKit.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link href="../css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../style.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/app.js"></script>
+
+        [if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+      <![endif]
+    </head>
+    <body>-->
+        <div class="container-fluid" id="create-trail">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Shout Out for a Trail</h1>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+                            <h4>Trail Information</h4>
+                            <div class="row">
+                                <form name="createTrail" role="form" ng-submit="submitTrail()" novalidate>
+                                    <div class="col-xs-12 col-md-6">
+                                        <fieldset class="form-group" ng-class="{ 'has-error' : createTrail.event_title.$invalid && !createTrail.event_title.$pristine }">
+                                            <label for="title">Trail Title</label>
+                                            <input type="text" class="form-control" id="title" name="event_title" ng-model="trailEvent.event_title">
+                                            <p ng-show="createTrail.event_title.$invalid && !createTrail.event_title.$pristine" class="help-block">Trail Title is required.</p>
+                                        </fieldset>
+                                    </div> 
+                                    <div class="col-xs-12 col-md-6">
+                                        <fieldset class="form-group" ng-class="{ 'has-error' : createTrail.event_time.$invalid && !createTrail.event_time.$pristine }">
+                                            <label for="title">Trail Start Time</label>
+                                            <div class='input-group time' id='datetimepicker3'>
+                                                <input type="text" class="form-control" id="start_time" ng-model="trailEvent.start_time" name="event_time" ng-click="showTime()">
+                                               
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-time" ng-click="showTime()"></span>
+                                                </span>
+                                                
+                                            </div>
+                                            <uib-timepicker ng-show="openTime" ng-model="trailEvent.start_time1" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                                            <p ng-show="createTrail.event_time.$invalid && !createTrail.event_time.$pristine" class="help-block">Trail Start Time is required.</p>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <fieldset class="form-group">
+                                            <label for="start_date">Start Date</label>
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type="text" ng-click="openstart($event)" class="form-control" id="start_date" ng-model="trailEvent.start_date" name="start_date" uib-datepicker-popup="{{format}}"  is-open="status.openedstartdate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close">
+                                                <span class="input-group-addon">
+                                                    <span ng-click="openstart($event)" class="glyphicon glyphicon-calendar"></span>
+                                                </span> 
+                                            </div>
+                                           
+<!--                                            <p ng-show="createTrail.start_date.$invalid && !createTrail.start_date.$pristine" class="help-block">Trail Start Date is required.</p>-->
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <fieldset class="form-group">
+                                            <label for="end_date">End Date</label>
+                                            <div class='input-group date' id='datetimepicker2'>
+                                                <input type="text" ng-click="openend($event)" class="form-control" id="end_date" ng-model="trailEvent.end_date" name="end_date" uib-datepicker-popup="{{format}}"  is-open="status.openedenddate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close">
+                                                <span class="input-group-addon">
+                                                    <span ng-click="openend($event)" class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                            <!--<p ng-show="createTrail.end_date.$invalid && !createTrail.end_date.$pristine" class="help-block">Trail End Date is required.</p>-->
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <fieldset class="form-group" ng-class="{ 'has-error' : createTrail.event_content.$invalid && !createTrail.event_content.$pristine }">
+                                            <label for="description">Trail Description</label>
+                                            <textarea class="form-control" id="description" rows="4" ng-model="trailEvent.event_content" name="event_content"></textarea>
+                                            <p ng-show="createTrail.event_content.$invalid && !createTrail.event_content.$pristine" class="help-block">Event Content is required.</p>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <fieldset class="form-group" ng-class="{ 'has-error' : createTrail.road_type.$invalid && !createTrail.road_type.$pristine }">
+                                            <label for="road_type">Road Type</label>
+                                            <select class="form-control" id="road_type" name="road_type" ng-model="trailEvent.road_type">
+                                                <option value="Highway">Highway</option>
+                                                <option value="Rural road">Rural road</option>
+                                                <option value="Broken Tarmac">Broken Tarmac</option>
+                                                <option value="Off Road">Off Road</option>
+                                            </select>
+                                            <p ng-show="createTrail.road_type.$invalid && !createTrail.road_type.$pristine" class="help-block">Road Type is required.</p>
+                                        </fieldset>
+                                    </div> 
+                                    <div class="col-xs-12">
+                                        <button type="submit" ng-disabled="createTrail.$invalid" class="btn btn-default btn-golden pull-right">Create Trail</button>
+                                    </div> 
+                                </form>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <script src="../js/bootstrap-datetimepicker.min.js"></script>
+
+
+        <script type="text/javascript">
+
+
+            $(document).ready(function () {
+
+                $('#datetimepicker1').datetimepicker({
+                   format: 'DD/MM/YYYY'
+                });
+                $('#datetimepicker2').datetimepicker({
+                   format: 'DD/MM/YYYY'
+                });
+                ;
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+    </body>
+
+</html>-->

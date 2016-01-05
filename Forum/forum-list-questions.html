@@ -1,0 +1,79 @@
+
+<div class="container-fluid" id="forum-list-questions">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="collapsed-height">
+                    <div class="top-heading col-xs-12 col-sm-6 col-md-9 col-lg-9 remove-padding">
+                        <h1>Forum</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <hr>
+                    </div>
+                    <div class="search-box col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <form role="search">
+                            <div class="input-group add-on">
+                                <div class="input-group-btn">
+                                    <button class="btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                                <input ng-model="q" type="text" class="form-control search-custom" placeholder="Search" name="srch-term" id="srch-term">
+
+                            </div>
+                        </form> 
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-xs-12 collapsed-height">
+                    <div class="subcat-name">
+                        <h4>{{list_question[0].sub_cat_name}}</h4>
+                        <p ng-if="results.length == 10">{{list_question['records'].length}} Topics</p>
+                        <p ng-if="results.length != 10">{{results.length}} Topics</p>
+                    </div>
+                    <div class="post-new-topic">
+                        <a ui-sref="forum-create-topic({subcategoryId : forumViewTopic.forum_sub_cat_id,subcategoryName : list_question[0].sub_cat_name})" href="#" class="btn btn-default btn-golden">Post New Topic</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="user-questions">
+                        <table class="table table-responsive">
+                            <thead>
+                            <th>Topic</th>
+                            <th>Created By</th>
+                            <th>Replies</th>
+                            </thead>
+                            <tbody>
+                                <tr  dir-paginate="data in list_question['records'] | filter : q  | orderBy : ASC | itemsPerPage : 10 as results ">
+                                    <td><a ui-sref="forum_topic_comment({questionId : data.id})" href="#">{{data.title}}</a></td>
+                                    <td>
+                                        <a ui-sref="forum_topic_comment({questionId : data.id})" href="#">{{data.f_name + " " + data.l_name}} </a>
+                                    </td>
+                                    <td>
+                                        <a  ui-sref="forum_topic_comment({questionId : data.id})" href="#">{{data.count}} </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-xs-12">
+                    <div class="pull-right">
+                        <nav>
+                            <div ng-controller="OtherController" class="text-center">
+                                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="Pagination/dirPagination.html"></dir-pagination-controls>
+                            </div>
+                            
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
